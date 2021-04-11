@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.47, user-scalable=no">
+    <title>海贼王音乐播放器</title>
+    <link type="text/css" rel="styleSheet" href="css/index.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部导航栏 -->
+        <div class="head">
+            <div class="search">
+                <!-- logo -->
+                <div class="logo">正在播放：{{playing}}</div>
+                <!-- 搜索框 -->
+                <input type="text" class="ipt" v-model='musicName' @keyup.enter='getMusic(musicName)'>
+                <!-- 搜索按钮 -->
+                <span class="btn" @click='getMusic(musicName)'>
+                    <img src="img/sou.png" alt="">
+                </span>
+            </div>
+        </div>
+        <!-- 主要内容区 -->
+        <div class="content">
+            <!-- 歌曲列表 -->
+            <ul class="list">
+                <li v-for='item in musicList'>
+                    <img src="img/ad.png" alt="" class="ad" @click='playMusic(item.id,item.name)'>
+                    <span class="music-name" @click='playMusic(item.id,item.name)'>
+                        {{ item.name }}
+                    </span>
+                    <img src="img/vd.png" alt="" class="vd" v-show='item.mvid' @click='playMv(item.mvid)'>
+                </li>
+            </ul>
+            <!-- 歌手写真图片 -->
+            <div class="photo">
+                <img :src="photoSrc" v-bind:class="{photorota:photoRota}" class="photo-img">
+            </div>
+            <!-- 歌曲评论 -->
+            <ul class="message">
+                <li v-for='mg in musicMsg'>
+                    <span>
+                        <!-- 评论者头像 -->
+                        <img :src="mg.user.avatarUrl" alt="">
+                    </span>
+                    {{ mg.content }}
+                </li>
+            </ul>
+        </div>
+        <!-- 进度条 -->
+        <div class="control">
+            <audio ref='audio' :src='musicUrl' controls autoplay loop>
+            </audio>
+        </div>
+        <div class="mv" v-if="mvDiv" @keyup.esc='downmv'>
+            <video ref="video" :src="mvSrc" controls autoplay loop>
+            </video>
+            <span class="downmv" @click='downmv'>×</span>
+        </div>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

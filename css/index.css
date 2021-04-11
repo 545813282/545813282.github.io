@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  height: 0;
+}
+body{
+  background:url(../img/314253.jpg);
+}
+
+li {
+  list-style: none;
+  cursor: default;
+}
+
+/* 头部开始 */
+#app {
+  position: relative;
+  margin:200px auto;
+  width: 800px;
+  height: 500px;
+  /* border: 1px solid rgb(240, 11, 11);
+  background-color: rgb(200, 199, 286); */
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: red;
+  line-height: 50px;
+}
+
+.logo {
+  font-size: 20px;
+  color: #fff;
+  float: left;
+  margin-left: 20px;
+}
+
+.ipt {
+  margin: 10px 20px 0 0;
+  width: 250px;
+  height: 25px;
+  float: right;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  font-size: 16px;
+  padding-left: 25px;
+}
+
+div .btn img {
+  position: absolute;
+  top: 10px;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  /* color: rgb(14, 1, 1); */
+  cursor: default;
+}
+/* 头部结束 */
+/* 内容区开始 */
+.content {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  height: 390px;
+  background:url(../img/296243.jpg) no-repeat;
+}
+
+/* 歌曲列表开始 */
+.list {
+  padding-left: 0px;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  overflow: scroll;
+}
+.list::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.list li {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: rgb(218, 84, 84);
+}
+
+.list li:nth-child(even) {
+  background-color: rgba(141, 136, 132, 0.747);
+}
+
+.ad {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  z-index: 99;
+}
+
+.vd {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  z-index: 99;
+}
+
+.music-name {
+  display: inline-block;
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  left: 40px;
+  color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 歌曲列表结束 */
+/* 写真图片开始 */
+.photo {
+  position: absolute;
+  top: 30px;
+  left: 27%;
+  width: 40%;
+  height: 320px;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.photorota {
+  animation: rota 10s linear infinite;
+}
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 写真图片结束 */
+/* 歌曲评论开始 */
+.message {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  padding-left: 0px;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  overflow: scroll;
+  background: rgba(34, 34, 34, 0.5);
+}
+.message::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.message li {
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+.message li span {
+  margin-top: 5px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.message li span img {
+  vertical-align: sub;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* 歌曲评论结束 */
+/* 底部播放条开始 */
+.control {
+  width: 100%;
+  height: 60px;
+  background-color: pink;
+}
+
+.control audio {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 243, 244);
+  border: none;
+  outline: 0;
+}
+/* 播放条结束 */
+/* 视频开始 */
+.mv {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 120%;
+  height: 120%;
+  z-index: 999;
+}
+.mv video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+}
+.downmv {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  display: inline-block;
+  font-size: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 5px 1px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  cursor: default;
+}
